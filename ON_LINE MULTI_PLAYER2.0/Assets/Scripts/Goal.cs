@@ -5,4 +5,5 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     public Transform nextGoal;
+    public bool house;
 }

@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3105526949039100024}
   - component: {fileID: 3105526949039100031}
   - component: {fileID: 3105526949039100030}
-  - component: {fileID: 3105526949039100029}
   - component: {fileID: 3105526949039100028}
   - component: {fileID: 3105526949039100026}
   - component: {fileID: 3105526949039100025}
-  m_Layer: 0
+  - component: {fileID: -2443646703206402215}
+  m_Layer: 9
   m_Name: Farmer
   m_TagString: Farmer
   m_Icon: {fileID: 0}
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3105526949039100029
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3105526949039100019}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3105526949039100028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,7 +117,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 4
 --- !u!114 &3105526949039100025
 MonoBehaviour:
@@ -146,10 +132,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   house: {fileID: 0}
+  castle: {fileID: 0}
   goal: {fileID: 0}
   agent: {fileID: 0}
+  farmManager: {fileID: 0}
   goalReached: 1
-  maxcooldown: 1
+  maxcooldown: 0.5
   cooldown: 0
   go: 1
   auto: 0
+--- !u!136 &-2443646703206402215
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105526949039100019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

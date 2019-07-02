@@ -5,28 +5,30 @@ using UnityEngine;
 public class SpawnFarmer : MonoBehaviour
 {
     public GameObject farmer;
-    public GameObject houseFarmer;
+    public List<GameObject> farmers = new List<GameObject>();
+    public GameObject[] spawnFarmerLoc;
+    public GameObject farmerSpawnPoint;
     public bool spawn;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool auto;
 
     // Update is called once per frame
     void Update()
     {
         if (spawn)
         {
-            Instantiate(farmer, houseFarmer.transform.position, Quaternion.identity);
+            BuyFarmer();
             spawn = false;
         }
     }
-    public void SetFarmer()
+    public void BuyFarmer()
     {
-        if(farmer.GetComponent<Farmer>().house != null)
+        for (int i = 0; i < spawnFarmerLoc.Length; i++)
         {
-            farmer.GetComponent<Farmer>().house = houseFarmer;
+            if(spawnFarmerLoc[i].GetComponent<Goal>().house == false)
+            {
+                Instantiate(farmer, farmerSpawnPoint.transform.position, Quaternion.identity);
+                break;
+            }
         }
     }
 }

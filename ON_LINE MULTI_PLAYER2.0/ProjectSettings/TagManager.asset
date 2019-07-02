@@ -9,6 +9,8 @@ TagManager:
   - Farm
   - Collectable
   - Manager
+  - Undefined
+  - Castle
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - 
   - Collectables
-  - 
+  - Agents
   - 
   - 
   - 
