@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseMachine : Building
+public class Building : MonoBehaviour
 {
-    public virtual void Start()
-    {
 
-    }
 }

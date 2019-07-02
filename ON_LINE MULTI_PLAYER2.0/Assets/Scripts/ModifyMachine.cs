@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ModifyMachine : MonoBehaviour
+public class ModifyMachine : BaseMachine
 {
     public virtual void OnTriggerEnter(Collider other)
     {
