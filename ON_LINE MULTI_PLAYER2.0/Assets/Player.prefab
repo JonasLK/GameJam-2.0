@@ -110,7 +110,7 @@ MonoBehaviour:
   ver: 0
   cHor: 0
   cVer: 0
-  movespeed: 20
+  movespeed: 4.5
   rotateSpeed: 90
   move: {x: 0, y: 0, z: 0}
   camMoveX: {x: 0, y: 0, z: 0}
