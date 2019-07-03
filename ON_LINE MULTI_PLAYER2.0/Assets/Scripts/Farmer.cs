@@ -21,6 +21,7 @@ public class Farmer : MonoBehaviour
         farmManager = GameObject.FindGameObjectWithTag("Spawner");
         castle = GameObject.FindGameObjectWithTag("Castle");
         SpawnFarmer houseLoc = farmManager.GetComponent<SpawnFarmer>();
+        farmManager.GetComponent<FarmerGo>().farmer.Add(gameObject);
         cooldown = maxcooldown;
         if(house == null)
         {

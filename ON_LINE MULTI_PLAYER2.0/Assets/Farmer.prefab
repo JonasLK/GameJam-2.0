@@ -139,7 +139,7 @@ MonoBehaviour:
   goalReached: 1
   maxcooldown: 0.5
   cooldown: 0
-  go: 1
+  go: 0
   auto: 0
 --- !u!136 &-2443646703206402215
 CapsuleCollider:

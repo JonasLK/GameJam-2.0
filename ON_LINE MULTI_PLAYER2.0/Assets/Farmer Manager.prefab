@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 285405886732089053}
   - component: {fileID: 285405886732089054}
+  - component: {fileID: 837573820}
   m_Layer: 0
   m_Name: Farmer Manager
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +45,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farmer: {fileID: 3105526949039100019, guid: 36c0344f59db6a545a110cf890f09cad, type: 3}
-  houseFarmer: {fileID: 0}
-  spawn: 0
+  farmers: []
+  spawnFarmerLoc:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  farmerSpawnPoint: {fileID: 0}
+  spawn: 1
   auto: 0
+--- !u!114 &837573820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285405886732089055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715910a5d933330478edbfd06fc50aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmer: []
+  goTimer: 2
+  go: 0

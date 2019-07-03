@@ -112,12 +112,19 @@ MonoBehaviour:
   cVer: 0
   movespeed: 4.5
   rotateSpeed: 90
+  walkingSpeed: 10
+  runningSpeed: 13
   move: {x: 0, y: 0, z: 0}
   camMoveX: {x: 0, y: 0, z: 0}
   camMoveY: {x: 0, y: 0, z: 0}
   testx: -44
   testxmax: 44
+  maxZoom: 20
+  minZoom: 5
+  walking: 0
+  running: 0
   cam: {fileID: 6186963321816600797}
+  actualCam: {fileID: 6186963321577459368}
 --- !u!1 &6186963321147801773
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +137,7 @@ GameObject:
   - component: {fileID: 6186963321147801775}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextGoal: {fileID: 0}
+  house: 0
 --- !u!1 &3622939741488665776
 GameObject:
   m_ObjectHideFlags: 0

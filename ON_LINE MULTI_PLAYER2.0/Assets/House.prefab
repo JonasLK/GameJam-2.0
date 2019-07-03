@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 466484702706181409}
   - component: {fileID: 466484702706181422}
   m_Layer: 0
-  m_Name: HouseGoal
+  m_Name: HouseGoal (3)
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextGoal: {fileID: 0}
+  house: 0
 --- !u!1 &466484703428810859
 GameObject:
   m_ObjectHideFlags: 0
