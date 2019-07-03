@@ -5,6 +5,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     public float defaultFadespeed;
+    public float defaultMusicFadeSpeed;
     public IEnumerator FadeObject(bool fadeIn, float fadeSpeed, GameObject objectToFade, bool destroyOnFinish)
     {
         Material fadeMaterial = new Material(objectToFade.GetComponent<MeshRenderer>().material);
@@ -57,5 +58,26 @@ public class EffectManager : MonoBehaviour
             yield return new WaitForSeconds(singleShakeDuration);
         }
         objectTransform.position = ogPos;
+    }
+    public IEnumerator SwapSoundEffect(AudioSource sourceToChange, AudioClip clipToChangeTo)
+    {
+        while(sourceToChange.volume > 0)
+        {
+            sourceToChange.volume -= defaultMusicFadeSpeed;
+            yield return new WaitForSeconds(0.05f);
+        }
+        sourceToChange.Stop();
+        sourceToChange.clip = clipToChangeTo;
+        sourceToChange.volume = 1;
+        sourceToChange.Play();
+    }
+    public IEnumerator MuteSound(AudioSource sourceToMute)
+    {
+        while (sourceToMute.volume > 0)
+        {
+            sourceToMute.volume -= defaultMusicFadeSpeed;
+            yield return new WaitForSeconds(0.05f);
+        }
+        sourceToMute.Stop();
     }
 }

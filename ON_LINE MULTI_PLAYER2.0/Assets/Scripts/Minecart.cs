@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Minecart : MonoBehaviour
 {
+    public AudioSource audioSource;
+    public AudioClip unloadClip;
+    public AudioClip moveClip;
+
     public GameObject ores;
     public ParticleSystem unloadParticles;
     public Collector collector;
@@ -31,7 +35,8 @@ public class Minecart : MonoBehaviour
     }
     public IEnumerator MoveToTarget()
     {
-        while(Vector3.Distance(transform.position, connectedMine.dropPoint.position) > 0.2f)
+        StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().SwapSoundEffect(audioSource, moveClip));
+        while (Vector3.Distance(transform.position, connectedMine.dropPoint.position) > 0.2f)
         {
             Vector3 newPosition = Vector3.MoveTowards(transform.position, connectedMine.dropPoint.position, moveSpeed * Time.deltaTime);
             newPosition.y = transform.position.y;
@@ -53,6 +58,7 @@ public class Minecart : MonoBehaviour
     }
     public IEnumerator Unload()
     {
+        StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().SwapSoundEffect(audioSource, unloadClip));
         Quaternion ogRotation = transform.rotation;
 
         Quaternion pointToRotateTo = transform.rotation;
@@ -79,6 +85,7 @@ public class Minecart : MonoBehaviour
         collector.Collect(currencyToAdd);
         ores.SetActive(false);
         unloadParticles.Stop();
+        StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().MuteSound(audioSource));
         while (transform.rotation != ogRotation)
         {
             transform.rotation = Quaternion.RotateTowards(transform.rotation, ogRotation, moveSpeed);
