@@ -150,6 +150,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseGoal (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -204,11 +209,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: HouseGoal (3)
       objectReference: {fileID: 0}
     - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -553,6 +553,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle
       objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: CastleGoal
+      objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_TagString
+      value: Castle
+      objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -623,6 +633,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6.2274
       objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: nextGoal
+      value: 
+      objectReference: {fileID: 14360607}
     - target: {fileID: 466484702706181409, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -633,21 +648,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.35
       objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: CastleGoal
-      objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_TagString
-      value: Castle
-      objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: nextGoal
-      value: 
-      objectReference: {fileID: 14360607}
     m_RemovedComponents:
     - {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 119046ee2cce9c044a945ebef8fca8db, type: 3}
@@ -662,6 +662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: House (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseGoal (4)
       objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -718,11 +723,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: HouseGoal (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: nextGoal
@@ -735,6 +735,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 119046ee2cce9c044a945ebef8fca8db, type: 3}
+--- !u!1 &1800185383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6186963321577459368, guid: b89279cfbb190c5408f0b75e13364256,
+    type: 3}
+  m_PrefabInstance: {fileID: 6186963321184838617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1820119135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
@@ -752,6 +758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 'House '
+      objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseGoal
       objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -808,11 +819,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: HouseGoal
-      objectReference: {fileID: 0}
     - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: nextGoal
@@ -831,6 +837,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: House (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseGoal (2)
       objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -886,11 +897,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: HouseGoal (2)
       objectReference: {fileID: 0}
     - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -1035,6 +1041,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: House (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
+        type: 3}
+      propertyPath: m_Name
+      value: HouseGoal (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 466484703428810863, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1089,11 +1100,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 466484702706181423, guid: 119046ee2cce9c044a945ebef8fca8db,
-        type: 3}
-      propertyPath: m_Name
-      value: HouseGoal (1)
       objectReference: {fileID: 0}
     - target: {fileID: 466484702706181422, guid: 119046ee2cce9c044a945ebef8fca8db,
         type: 3}
@@ -1247,6 +1253,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186963320974233762, guid: b89279cfbb190c5408f0b75e13364256,
+        type: 3}
+      propertyPath: walkingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186963320974233762, guid: b89279cfbb190c5408f0b75e13364256,
+        type: 3}
+      propertyPath: runningSpeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186963320974233762, guid: b89279cfbb190c5408f0b75e13364256,
+        type: 3}
+      propertyPath: actualCam
+      value: 
+      objectReference: {fileID: 1800185383}
+    - target: {fileID: 6186963320974233762, guid: b89279cfbb190c5408f0b75e13364256,
+        type: 3}
+      propertyPath: maxZoom
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186963320974233762, guid: b89279cfbb190c5408f0b75e13364256,
+        type: 3}
+      propertyPath: minZoom
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b89279cfbb190c5408f0b75e13364256, type: 3}
