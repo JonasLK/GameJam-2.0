@@ -37,7 +37,21 @@ public abstract class BaseDropper : BaseMachine
             dropAmount--;
             yield return new WaitForSeconds(loadDelay);
         }
-
+        bool alreadyContainedOre = false;
+        for(int i = 0; i < collectorToDropInto.GetComponent<Minecart>().oreHolder.Count; i++)
+        {
+            if(collectorToDropInto.GetComponent<Minecart>().oreHolder[i].oreHolding == dropObject)
+            {
+                collectorToDropInto.GetComponent<Minecart>().oreHolder[i].amount += amountToDrop;
+                alreadyContainedOre = true;
+                break;
+            }
+        }
+        if (!alreadyContainedOre)
+        {
+            collectorToDropInto.GetComponent<Minecart>().oreHolder.Add(new Minecart.OreHolder(dropObject, amountToDrop, dropObject.GetComponent<CurrencyDrop>().value));
+        }
+        collectorToDropInto.GetComponent<Minecart>().ores.SetActive(true);
         //LOADING SHIT IN
         while (Vector3.Distance(collectorToDropInto.transform.position, ogPosition) != 0)
         {
