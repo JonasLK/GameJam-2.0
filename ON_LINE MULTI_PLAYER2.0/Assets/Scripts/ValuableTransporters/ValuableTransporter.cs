@@ -23,7 +23,7 @@ public class ValuableTransporter : MonoBehaviour
         StartCoroutine(MoveToDestination());
     }
 
-    public IEnumerator MoveToDestination()
+    public virtual IEnumerator MoveToDestination()
     {
         if(currentWantedDestination == destinations.Length)
         {

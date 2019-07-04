@@ -17,10 +17,10 @@ public class MineAutoDropper : AutoDropper
             yield return new WaitForSeconds(0.01f);
         }
         StopCoroutine(currentGenerationRoutine);
-        while (cashHolding > 0)
+        while (amountHolding > 0)
         {
             yield return new WaitForSeconds(loadDelayPerAmount);
-            cashHolding--;
+            amountHolding--;
             collectorToDropInto.GetComponent<ValuableTransporter>().amountHolding++;
         }
 

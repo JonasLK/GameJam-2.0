@@ -4,15 +4,11 @@ using UnityEngine;
 
 public abstract class BaseDropper : AIUsable
 {
-    public float cashHolding;
-    public float cashCapacity;
+    public float amountHolding;
+    public float amountCapacity;
 
     public Coroutine currentGenerationRoutine;
 
-    public override void Start()
-    {
-        currentGenerationRoutine = StartCoroutine(GenerateDrops());
-    }
 
     public override void Use(GameObject user)
     {

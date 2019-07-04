@@ -6,6 +6,10 @@ public class HayDay : ValuableTransporter
 {
     public override IEnumerator Unload(GameObject objectToUnloadIn)
     {
-        return base.Unload(objectToUnloadIn);
+        yield return null;
+        objectToUnloadIn.GetComponent<Collector>().Collect(amountHolding * valueMultiplier);
+        amountHolding = 0;
+        StartCoroutine(MoveToDestination());
     }
+
 }

@@ -9,7 +9,7 @@ public class AutoDropper : BaseDropper
     public override void Start()
     {
         base.Start();
-        StartCoroutine(GenerateDrops());
+        currentGenerationRoutine = StartCoroutine(GenerateDrops());
     }
 
     public override IEnumerator GenerateDrops()
@@ -17,7 +17,7 @@ public class AutoDropper : BaseDropper
         while (true)
         {
             yield return new WaitForSeconds(generateDelay);
-            cashHolding = Mathf.Min(cashHolding + 1, cashCapacity);
+            amountHolding = Mathf.Min(amountHolding + 1, amountCapacity);
         }
     }
 }

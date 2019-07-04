@@ -36,7 +36,7 @@ public class EffectManager : MonoBehaviour
         }
         if (destroyOnFinish)
         {
-            Destroy(gameObject);
+            Destroy(objectToFade);
         }
     }
     public void FadeObjectIn(GameObject objectToFadeIn)

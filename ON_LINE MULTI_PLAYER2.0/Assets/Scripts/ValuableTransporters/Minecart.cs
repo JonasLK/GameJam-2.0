@@ -33,8 +33,8 @@ public class Minecart : ValuableTransporter
             transform.rotation = Quaternion.RotateTowards(transform.rotation, pointToRotateTo, moveSpeed);
             yield return new WaitForSeconds(0.01f);
         }
-        amountHolding *= valueMultiplier;
-        objectToUnloadIn.GetComponent<Collector>().Collect(amountHolding);
+        objectToUnloadIn.GetComponent<Collector>().Collect(amountHolding * valueMultiplier);
+        amountHolding = 0;
         valuableStack.SetActive(false);
         unloadParticles.Stop();
         StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().MuteSound(audioSource));
