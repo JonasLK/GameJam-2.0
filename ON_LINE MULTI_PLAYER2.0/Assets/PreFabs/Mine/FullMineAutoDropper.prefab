@@ -37,6 +37,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &8125349302013972267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607267532357572009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2caba4c005b509468a8d3d358985603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactPoint: {fileID: 1924053616873711896}
+  cashHolding: 0
+  cashCapacity: 0
+  generateDelay: 1
+  minecartLowerAmount: -1
+  lowerSpeed: 0.01
 --- !u!82 &7476933803672067119
 AudioSource:
   m_ObjectHideFlags: 0
@@ -210,36 +228,20 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2066093484311692578, guid: aea9eb0975cfb37408d8a786ae267b24,
-        type: 3}
-      propertyPath: interactPoint
-      value: 
-      objectReference: {fileID: 1924053616873711896}
-    - target: {fileID: 2066093484311692578, guid: aea9eb0975cfb37408d8a786ae267b24,
-        type: 3}
-      propertyPath: cart
-      value: 
-      objectReference: {fileID: 7607267532975100660}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aea9eb0975cfb37408d8a786ae267b24, type: 3}
+--- !u!1 &7607267532357572009 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8038309632528754477, guid: aea9eb0975cfb37408d8a786ae267b24,
+    type: 3}
+  m_PrefabInstance: {fileID: 441248866628743812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6902092283519166394 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6473513097996588350, guid: aea9eb0975cfb37408d8a786ae267b24,
     type: 3}
   m_PrefabInstance: {fileID: 441248866628743812}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1924053618539296678 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2066093484311692578, guid: aea9eb0975cfb37408d8a786ae267b24,
-    type: 3}
-  m_PrefabInstance: {fileID: 441248866628743812}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04634e575f98c6a45863118f1587a81f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1924053616873711896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2066093483728509852, guid: aea9eb0975cfb37408d8a786ae267b24,
@@ -805,7 +807,7 @@ PrefabInstance:
         type: 3}
       propertyPath: destinations.Array.data[1]
       value: 
-      objectReference: {fileID: 1924053618539296678}
+      objectReference: {fileID: 8125349302013972267}
     - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
         type: 3}
       propertyPath: audioSource
