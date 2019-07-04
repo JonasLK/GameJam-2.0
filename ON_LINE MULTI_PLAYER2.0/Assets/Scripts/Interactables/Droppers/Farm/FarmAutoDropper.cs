@@ -9,16 +9,16 @@ public class FarmAutoDropper : AutoDropper
     public override IEnumerator StartLoading(GameObject collectorToDropInto, float loadDelayPerAmount)
     {
         StopCoroutine(currentGenerationRoutine);
-        float foodToadd = 0;
         for(int i = 0; i < amountHolding; i++)
         {
+            float foodToAdd = 0;
             yield return new WaitForSeconds(loadDelayPerAmount);
             GameObject carrotSelected = carrots[i];
             Vector3 ogPosition = carrotSelected.transform.position;
-            foodToadd += carrotSelected.GetComponent<CurrencyDrop>().value;
+            foodToAdd += carrotSelected.GetComponent<CurrencyDrop>().value;
             StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().FadeObject(false, carrotFadeSpeed, carrotSelected, false));
+            collectorToDropInto.GetComponent<ValuableTransporter>().amountHolding += foodToAdd;
         }
-        collectorToDropInto.GetComponent<ValuableTransporter>().amountHolding += foodToadd;
         amountHolding = 0;
         StartCoroutine(collectorToDropInto.GetComponent<ValuableTransporter>().MoveToDestination());
         currentGenerationRoutine = StartCoroutine(GenerateDrops());

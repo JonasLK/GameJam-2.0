@@ -9,13 +9,6 @@ public class Interactable : MonoBehaviour
     public bool canInteract = true;
     public UnityEvent interactEvents;
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Interact();
-        }
-    }
     public void Interact()
     {
         if (canInteract)

@@ -17,6 +17,8 @@ public class ValuableTransporter : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip moveClip;
+
+    public float maxDistanceBetweenGoal = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class ValuableTransporter : MonoBehaviour
             currentWantedDestination = 0;
         }
         StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().SwapSoundEffect(audioSource, moveClip));
-        while (Vector3.Distance(transform.position, destinations[currentWantedDestination].interactPoint.position) > 0.2f)
+        while (Vector3.Distance(transform.position, destinations[currentWantedDestination].interactPoint.position) > maxDistanceBetweenGoal)
         {
             Vector3 newPosition = Vector3.MoveTowards(transform.position, destinations[currentWantedDestination].interactPoint.position, moveSpeed * Time.deltaTime);
             newPosition.y = transform.position.y;

@@ -10,8 +10,16 @@ public class Collector : AIUsable
         base.Use(user);
         StartCoroutine(user.GetComponent<ValuableTransporter>().Unload(gameObject));
     }
-    public void Collect(float value)
+    public void Collect(float value, CollectableType currencyType)
     {
-        GameObject.FindGameObjectWithTag("Manager").GetComponent<LocalGameManager>().currency += value * GameObject.FindGameObjectWithTag("Manager").GetComponent<LocalGameManager>().currencyBoost;
+        if(currencyType == CollectableType.Currency)
+        {
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<LocalGameManager>().currency += value * GameObject.FindGameObjectWithTag("Manager").GetComponent<LocalGameManager>().currencyBoost;
+        }
+        else
+        {
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<LocalGameManager>().food += value;
+        }
     }
+    public enum CollectableType { Currency, Food}
 }
