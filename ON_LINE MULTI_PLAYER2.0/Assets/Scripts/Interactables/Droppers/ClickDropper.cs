@@ -8,11 +8,11 @@ public class ClickDropper : BaseDropper
     public void GenerateDrop()
     {
         //StartCoroutine(GenerateDrops());
-        dropAmount = Mathf.Min(dropAmount + 1, oreCapacity);
+        cashHolding = Mathf.Min(cashHolding + 1, cashCapacity);
     }
     public override IEnumerator GenerateDrops()
     {
-        dropAmount = Mathf.Min(dropAmount + 1, oreCapacity);
+        cashHolding = Mathf.Min(cashHolding + 1, cashCapacity);
         yield return null;
     }
 }

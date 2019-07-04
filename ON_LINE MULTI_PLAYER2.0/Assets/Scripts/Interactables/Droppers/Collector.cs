@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Collector : AIUsable
 {
-    public Transform collectionPoint;
 
     public override void Use(GameObject user)
     {
+        base.Use(user);
         StartCoroutine(user.GetComponent<ValuableTransporter>().Unload(gameObject));
     }
     public void Collect(float value)

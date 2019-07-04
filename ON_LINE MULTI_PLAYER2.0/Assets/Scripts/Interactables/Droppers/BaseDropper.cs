@@ -4,28 +4,25 @@ using UnityEngine;
 
 public abstract class BaseDropper : AIUsable
 {
-    public GameObject dropObject;
-    public Transform dropPoint;
     public float minecartLowerAmount;
     public float lowerSpeed;
-    public int dropAmount;
-    public int oreCapacity;
 
-    public GameObject cart;
-    // Start is called before the first frame update
+    public float cashHolding;
+    public float cashCapacity;
 
-    public void Update()
+    public Coroutine currentGenerationRoutine;
+
+    public override void Start()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartCoroutine(StartLoading(cart, 0.3f));
-        }
+        currentGenerationRoutine = StartCoroutine(GenerateDrops());
     }
+
     public override void Use(GameObject user)
     {
+        base.Use(user);
         StartCoroutine(StartLoading(user, user.GetComponent<ValuableTransporter>().loadSpeed));
     }
-    public IEnumerator StartLoading(GameObject collectorToDropInto, float loadDelay)
+    public IEnumerator StartLoading(GameObject collectorToDropInto, float loadDelayPerAmount)
     {
         Vector3 ogPosition = collectorToDropInto.transform.position;
 
@@ -34,27 +31,14 @@ public abstract class BaseDropper : AIUsable
             collectorToDropInto.transform.position = Vector3.MoveTowards(collectorToDropInto.transform.position, ogPosition + new Vector3(0, minecartLowerAmount, 0), lowerSpeed);
             yield return new WaitForSeconds(0.01f);
         }
+        StopCoroutine(currentGenerationRoutine);
+        while(cashHolding > 0)
+        {
+            yield return new WaitForSeconds(loadDelayPerAmount);
+            cashHolding--;
+            collectorToDropInto.GetComponent<ValuableTransporter>().amountHolding++;
+        }
 
-        int amountToDrop = dropAmount;
-        for (int droppedAmount = 0; droppedAmount < amountToDrop; droppedAmount++)
-        {
-            dropAmount--;
-            yield return new WaitForSeconds(loadDelay);
-        }
-        bool alreadyContainedOre = false;
-        for(int i = 0; i < collectorToDropInto.GetComponent<Minecart>().oreHolder.Count; i++)
-        {
-            if(collectorToDropInto.GetComponent<Minecart>().oreHolder[i].oreHolding == dropObject)
-            {
-                collectorToDropInto.GetComponent<Minecart>().oreHolder[i].amount += amountToDrop;
-                alreadyContainedOre = true;
-                break;
-            }
-        }
-        if (!alreadyContainedOre)
-        {
-            collectorToDropInto.GetComponent<Minecart>().oreHolder.Add(new Minecart.OreHolder(dropObject, amountToDrop, dropObject.GetComponent<CurrencyDrop>().value));
-        }
         collectorToDropInto.GetComponent<ValuableTransporter>().valuableStack.SetActive(true);
         //LOADING SHIT IN
         while (Vector3.Distance(collectorToDropInto.transform.position, ogPosition) != 0)
@@ -62,16 +46,7 @@ public abstract class BaseDropper : AIUsable
             collectorToDropInto.transform.position = Vector3.MoveTowards(collectorToDropInto.transform.position, ogPosition, lowerSpeed);
             yield return new WaitForSeconds(0.01f);
         }
-        StartCoroutine(collectorToDropInto.GetComponent<Minecart>().MoveToOrigin());
-        /*
-        int amountToDrop = dropAmount;
-        for(int droppedAmount = 0; droppedAmount < amountToDrop; droppedAmount++)
-        {
-            yield return new WaitForSeconds(loadDelay);
-            Instantiate(dropObject, dropPoint.transform.position, Quaternion.identity);
-        }
-        dropAmount -= amountToDrop;
-        //Tell collector to proceed*/
+        StartCoroutine(collectorToDropInto.GetComponent<ValuableTransporter>().MoveToDestination());
     }
     public abstract IEnumerator GenerateDrops();
 }

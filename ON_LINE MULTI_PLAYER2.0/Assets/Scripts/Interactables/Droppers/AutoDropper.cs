@@ -17,7 +17,7 @@ public class AutoDropper : BaseDropper
         while (true)
         {
             yield return new WaitForSeconds(generateDelay);
-            dropAmount = Mathf.Min(dropAmount + 1, oreCapacity);
+            cashHolding = Mathf.Min(cashHolding + 1, cashCapacity);
         }
     }
 }

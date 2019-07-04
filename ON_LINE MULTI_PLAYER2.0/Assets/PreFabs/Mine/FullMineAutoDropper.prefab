@@ -212,6 +212,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066093484311692578, guid: aea9eb0975cfb37408d8a786ae267b24,
         type: 3}
+      propertyPath: interactPoint
+      value: 
+      objectReference: {fileID: 1924053616873711896}
+    - target: {fileID: 2066093484311692578, guid: aea9eb0975cfb37408d8a786ae267b24,
+        type: 3}
       propertyPath: cart
       value: 
       objectReference: {fileID: 7607267532975100660}
@@ -235,6 +240,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04634e575f98c6a45863118f1587a81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1924053616873711896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2066093483728509852, guid: aea9eb0975cfb37408d8a786ae267b24,
+    type: 3}
+  m_PrefabInstance: {fileID: 441248866628743812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1924053617254749673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -647,6 +658,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7646183327207330111, guid: bae0d5a2bc2cd9e4f9554a2005fd49ff,
+        type: 3}
+      propertyPath: interactPoint
+      value: 
+      objectReference: {fileID: 1924053618099284097}
     - target: {fileID: 4781587456440820805, guid: bae0d5a2bc2cd9e4f9554a2005fd49ff,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -677,6 +693,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b72d8339432f8948bedde5989217bc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1924053618099284097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7646183328138843652, guid: bae0d5a2bc2cd9e4f9554a2005fd49ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 8119761067252792965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9141990864102475244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -756,9 +778,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
         type: 3}
+      propertyPath: destinations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
+        type: 3}
+      propertyPath: loadSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
+        type: 3}
+      propertyPath: unloadSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
+        type: 3}
       propertyPath: valuableStack
       value: 
       objectReference: {fileID: 1924053618144649886}
+    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
+        type: 3}
+      propertyPath: destinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1924053616882298810}
+    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
+        type: 3}
+      propertyPath: destinations.Array.data[1]
+      value: 
+      objectReference: {fileID: 1924053618539296678}
     - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
         type: 3}
       propertyPath: audioSource
@@ -766,24 +813,14 @@ PrefabInstance:
       objectReference: {fileID: 7476933803672067119}
     - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
         type: 3}
-      propertyPath: unloadClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 071c329e444da7b4495396d508eb3cdc, type: 3}
-    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
-        type: 3}
       propertyPath: moveClip
       value: 
       objectReference: {fileID: 8300000, guid: c753f9513afa32548ba35785befdd1d8, type: 3}
     - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
         type: 3}
-      propertyPath: collector
+      propertyPath: unloadClip
       value: 
-      objectReference: {fileID: 1924053616882298810}
-    - target: {fileID: 7236577423485984002, guid: e8ccbb48b4fccce4189e0b249e7229d5,
-        type: 3}
-      propertyPath: connectedMine
-      value: 
-      objectReference: {fileID: 1924053618539296678}
+      objectReference: {fileID: 8300000, guid: 071c329e444da7b4495396d508eb3cdc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8ccbb48b4fccce4189e0b249e7229d5, type: 3}
 --- !u!1 &7607267532975100660 stripped
