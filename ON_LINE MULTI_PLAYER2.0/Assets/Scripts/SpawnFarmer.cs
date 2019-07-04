@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnFarmer : MonoBehaviour
 {
     public GameObject farmer;
-    public List<GameObject> farmers = new List<GameObject>();
     public GameObject[] spawnFarmerLoc;
     public GameObject farmerSpawnPoint;
     public bool spawn;
