@@ -62,23 +62,23 @@ public class Movement : MonoBehaviour
                 }
                 walking = true;
             }
+            if (Input.GetButton("Run"))
+            {
+                running = true;
+                walking = false;
+                movespeed = runningSpeed;
+            }
+            else
+            {
+                running = false;
+                movespeed = walkingSpeed;
+            }
         }
         else
         {
             walking = false;
             running = false;
             moving = false;
-        }
-        if (Input.GetButton("Run"))
-        {
-            running = true;
-            walking = false;
-            movespeed = runningSpeed;
-        }
-        else
-        {
-            running = false;
-            movespeed = walkingSpeed;
         }
         if(walking || running)
         {
