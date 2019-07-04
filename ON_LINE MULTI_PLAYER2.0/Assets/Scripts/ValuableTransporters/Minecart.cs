@@ -2,20 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Minecart : MonoBehaviour
+public class Minecart : ValuableTransporter
 {
     public AudioSource audioSource;
     public AudioClip unloadClip;
     public AudioClip moveClip;
 
-    public GameObject ores;
     public ParticleSystem unloadParticles;
-    public Collector collector;
-    public BaseDropper connectedMine;
-    public float valueMultiplier = 1;
-    public float moveSpeed;
-    public float loadSpeed;
-    public float unloadSpeed;
+
     public Vector3 rotateAmount;
     public List<OreHolder> oreHolder = new List<OreHolder>();
     // Start is called before the first frame update
@@ -25,14 +19,7 @@ public class Minecart : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void OnLoaded()
-    {
-        ores.SetActive(true);
-    }
-    void Update()
-    {
-        Unload();
-    }
+
     public IEnumerator MoveToTarget()
     {
         StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().SwapSoundEffect(audioSource, moveClip));
@@ -43,7 +30,7 @@ public class Minecart : MonoBehaviour
             transform.position = newPosition;
             yield return null;
         }
-        StartCoroutine(connectedMine.StartLoading(gameObject, loadSpeed));
+        connectedMine.Use(gameObject);
     }
     public IEnumerator MoveToOrigin()
     {
@@ -54,9 +41,9 @@ public class Minecart : MonoBehaviour
             transform.position = newPosition;
             yield return null;
         }
-        StartCoroutine(Unload());
+        collector.Use(gameObject);
     }
-    public IEnumerator Unload()
+    public override IEnumerator Unload(GameObject objectToUnloadIn)
     {
         StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().SwapSoundEffect(audioSource, unloadClip));
         Quaternion ogRotation = transform.rotation;
@@ -77,13 +64,13 @@ public class Minecart : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         float currencyToAdd = 0;
-        foreach(OreHolder oreType in oreHolder)
+        foreach (Minecart.OreHolder oreType in oreHolder)
         {
             currencyToAdd += oreType.value * oreType.amount;
         }
         currencyToAdd *= valueMultiplier;
-        collector.Collect(currencyToAdd);
-        ores.SetActive(false);
+        objectToUnloadIn.GetComponent<Collector>().Collect(currencyToAdd);
+        valuableStack.SetActive(false);
         unloadParticles.Stop();
         StartCoroutine(GameObject.FindGameObjectWithTag("Manager").GetComponent<EffectManager>().MuteSound(audioSource));
         while (transform.rotation != ogRotation)

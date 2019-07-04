@@ -61,12 +61,17 @@ public class EffectManager : MonoBehaviour
     }
     public IEnumerator SwapSoundEffect(AudioSource sourceToChange, AudioClip clipToChangeTo)
     {
-        while(sourceToChange.volume > 0)
+        print("swapping");
+        if (sourceToChange.clip)
         {
-            sourceToChange.volume -= defaultMusicFadeSpeed;
-            yield return new WaitForSeconds(0.05f);
+            while (sourceToChange.volume > 0)
+            {
+                sourceToChange.volume -= defaultMusicFadeSpeed;
+                yield return new WaitForSeconds(0.05f);
+                print("Mute");
+            }
+            sourceToChange.Stop();
         }
-        sourceToChange.Stop();
         sourceToChange.clip = clipToChangeTo;
         sourceToChange.volume = 1;
         sourceToChange.Play();
@@ -75,6 +80,7 @@ public class EffectManager : MonoBehaviour
     {
         while (sourceToMute.volume > 0)
         {
+            print("Mutee");
             sourceToMute.volume -= defaultMusicFadeSpeed;
             yield return new WaitForSeconds(0.05f);
         }

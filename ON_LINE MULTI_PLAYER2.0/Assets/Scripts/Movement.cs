@@ -103,7 +103,6 @@ public class Movement : MonoBehaviour
         {
             Vector3 newEuler = cam.transform.localEulerAngles;
             float tempClamp = newEuler.x;
-            print(newEuler);
             if (newEuler.x > 180)
             {
                 tempClamp -= 360;

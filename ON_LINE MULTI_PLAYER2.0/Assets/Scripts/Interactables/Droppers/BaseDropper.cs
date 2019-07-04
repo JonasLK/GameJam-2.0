@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BaseDropper : BaseMachine
+public abstract class BaseDropper : AIUsable
 {
     public GameObject dropObject;
     public Transform dropPoint;
@@ -20,6 +20,10 @@ public abstract class BaseDropper : BaseMachine
         {
             StartCoroutine(StartLoading(cart, 0.3f));
         }
+    }
+    public override void Use(GameObject user)
+    {
+        StartCoroutine(StartLoading(user, user.GetComponent<ValuableTransporter>().loadSpeed));
     }
     public IEnumerator StartLoading(GameObject collectorToDropInto, float loadDelay)
     {
@@ -51,7 +55,7 @@ public abstract class BaseDropper : BaseMachine
         {
             collectorToDropInto.GetComponent<Minecart>().oreHolder.Add(new Minecart.OreHolder(dropObject, amountToDrop, dropObject.GetComponent<CurrencyDrop>().value));
         }
-        collectorToDropInto.GetComponent<Minecart>().ores.SetActive(true);
+        collectorToDropInto.GetComponent<ValuableTransporter>().valuableStack.SetActive(true);
         //LOADING SHIT IN
         while (Vector3.Distance(collectorToDropInto.transform.position, ogPosition) != 0)
         {
