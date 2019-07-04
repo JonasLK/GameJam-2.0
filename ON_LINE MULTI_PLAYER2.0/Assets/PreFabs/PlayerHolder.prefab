@@ -317,7 +317,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1906486994508701145}
   - component: {fileID: 1906486994508701150}
-  - component: {fileID: 1906486994508701151}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -382,14 +381,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1906486994508701151
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906486994508701148}
-  m_Enabled: 1
 --- !u!1 &1906486994756092841
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,6 +1035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6983947903997541329}
   - component: {fileID: 8334716475126894287}
+  - component: {fileID: 8178830651497460193}
   m_Layer: 0
   m_Name: Player LP
   m_TagString: Untagged
@@ -1143,6 +1135,14 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000008940697, y: 0.37923145, z: 0.012688965}
     m_Extent: {x: 0.5812044, y: 0.93877363, z: 0.30758065}
   m_DirtyAABB: 0
+--- !u!81 &8178830651497460193
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5790640681438379452}
+  m_Enabled: 1
 --- !u!1 &5808208504989086954
 GameObject:
   m_ObjectHideFlags: 0
