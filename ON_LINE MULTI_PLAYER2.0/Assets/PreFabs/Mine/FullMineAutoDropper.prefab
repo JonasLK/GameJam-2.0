@@ -50,10 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactPoint: {fileID: 1924053616873711896}
-  cashHolding: 0
-  cashCapacity: 0
+  amountHolding: 0
+  amountCapacity: 0
   generateDelay: 1
-  minecartLowerAmount: -1
+  minecartLowerAmount: -2
   lowerSpeed: 0.01
 --- !u!82 &7476933803672067119
 AudioSource:
