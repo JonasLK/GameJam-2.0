@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &6055329517287536911
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364630604706812971}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0218905, y: 0.48534822, z: 1.6742141}
-  m_Center: {x: 0, y: 0.04034779, z: 0.83710706}
 --- !u!1 &1498893056997370273
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +58,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 759889784576852924}
-  - {fileID: 3698638654405600824}
+  - {fileID: 7891096138944098427}
   - {fileID: 67980935438102218}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -364,17 +351,41 @@ PrefabInstance:
       propertyPath: destinations.Array.data[1]
       value: 
       objectReference: {fileID: 1498893056708273910}
+    - target: {fileID: 6864552152903300164, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864552152903300164, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864552152903300164, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864552152903300164, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572961140819838544, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: destinations.Array.data[1]
+      value: 
+      objectReference: {fileID: 4729564764306075500}
+    - target: {fileID: 7572961140819838544, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+        type: 3}
+      propertyPath: destinations.Array.data[0]
+      value: 
+      objectReference: {fileID: 1498893056708273910}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9dbf9995a27bb394da6c0c8ff74a4612, type: 3}
---- !u!1 &364630604706812971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4021268526928007188, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
-    type: 3}
-  m_PrefabInstance: {fileID: 3657213104301376575}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3698638654405600824 stripped
+--- !u!4 &7891096138944098427 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 114054211634094599, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
+  m_CorrespondingSourceObject: {fileID: 6864552152903300164, guid: 9dbf9995a27bb394da6c0c8ff74a4612,
     type: 3}
   m_PrefabInstance: {fileID: 3657213104301376575}
   m_PrefabAsset: {fileID: 0}
