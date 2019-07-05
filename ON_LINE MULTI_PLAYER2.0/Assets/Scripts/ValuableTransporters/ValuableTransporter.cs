@@ -15,6 +15,7 @@ public class ValuableTransporter : MonoBehaviour
 
     public float amountHolding;
 
+    public Animator anime;
     public AudioSource audioSource;
     public AudioClip moveClip;
 
@@ -22,6 +23,7 @@ public class ValuableTransporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anime = GetComponent<Animator>();
         StartCoroutine(MoveToDestination());
     }
 
