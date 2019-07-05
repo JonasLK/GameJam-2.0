@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 8719581537272539804}
   - component: {fileID: 313329523500257450}
   - component: {fileID: 6297618745177926739}
-  - component: {fileID: 1658592872889063319}
   m_Layer: 0
   m_Name: Green Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &8719581537272539804
 Transform:
@@ -26,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5717729764668201103}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -23.980444, y: 0.5, z: -5.711089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -78,17 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1658592872889063319
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5717729764668201103}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4697567540310481828, guid: da85ef50c5203de44ab8a06bf4baa8db, type: 3}

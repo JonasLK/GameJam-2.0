@@ -130,21 +130,20 @@ public class Movement : MonoBehaviour
     public void FixedUpdate()
     {
         
-        if (Input.GetButton("Fire2"))
+        
+        Vector3 newEuler = cam.transform.localEulerAngles;
+        float tempClamp = newEuler.x;
+        if (newEuler.x > 180)
         {
-            Vector3 newEuler = cam.transform.localEulerAngles;
-            float tempClamp = newEuler.x;
-            if (newEuler.x > 180)
-            {
-                tempClamp -= 360;
-            }
-            tempClamp = Mathf.Clamp(tempClamp, testx, testxmax);
-            newEuler.x = tempClamp;
-            cam.transform.eulerAngles = newEuler;
-            cam.transform.Rotate(camMoveX * Time.deltaTime * rotateSpeed, Space.Self);
-            //gameObject.transform.Rotate(camMoveY * Time.deltaTime * rotateSpeed);
-            cam.transform.Rotate(camMoveY * Time.deltaTime * rotateSpeed, Space.World); //y world, x local
+            tempClamp -= 360;
         }
+        tempClamp = Mathf.Clamp(tempClamp, testx, testxmax);
+        newEuler.x = tempClamp;
+        cam.transform.eulerAngles = newEuler;
+        cam.transform.Rotate(camMoveX * Time.deltaTime * rotateSpeed, Space.Self);
+        //gameObject.transform.Rotate(camMoveY * Time.deltaTime * rotateSpeed);
+        cam.transform.Rotate(camMoveY * Time.deltaTime * rotateSpeed, Space.World); //y world, x local
+        
         Quaternion rotationWeWnat = Quaternion.LookRotation(walkDirection);
         actualBodyModel.transform.rotation = Quaternion.RotateTowards(actualBodyModel.transform.rotation, rotationWeWnat, bodyRotateSpeed);
         transform.Translate(move * Time.deltaTime * movespeed);

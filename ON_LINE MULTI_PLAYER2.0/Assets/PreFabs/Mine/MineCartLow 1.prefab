@@ -106,16 +106,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b19beb90e88b2c64793e6caa49075d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ores: {fileID: 7236577424029312882}
-  unloadParticles: {fileID: 7236577422529675831}
-  collector: {fileID: 0}
-  connectedMine: {fileID: 0}
-  valueMultiplier: 1
-  moveSpeed: 1
   loadSpeed: 0
   unloadSpeed: 0
+  valuableStack: {fileID: 0}
+  destinations: []
+  currentWantedDestination: 1
+  valueMultiplier: 1
+  moveSpeed: 2
+  amountHolding: 0
+  audioSource: {fileID: 0}
+  moveClip: {fileID: 0}
+  maxDistanceBetweenGoal: 0.2
+  unloadClip: {fileID: 0}
+  unloadParticles: {fileID: 7236577422529675831}
   rotateAmount: {x: 60, y: 0, z: 0}
-  oreHolder: []
 --- !u!1 &7236577422529675830
 GameObject:
   m_ObjectHideFlags: 0
